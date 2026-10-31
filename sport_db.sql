@@ -1,6 +1,3 @@
--- Base de données du projet "Réservation de terrains sportifs"
--- Import : phpMyAdmin > Importer, ou : mysql -u root -p < sport_db.sql
-
 CREATE DATABASE IF NOT EXISTS sport_db
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_general_ci;

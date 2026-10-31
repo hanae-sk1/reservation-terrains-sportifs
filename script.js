@@ -1,8 +1,8 @@
 const formulaire = document.getElementById("formReservation");
 const champDate = document.getElementById("date");
 
-// On empêche de choisir une date passée dans le calendrier
-champDate.min = new Date().toLocaleDateString("en-CA"); // format AAAA-MM-JJ
+
+champDate.min = new Date().toLocaleDateString("en-CA"); 
 
 formulaire.addEventListener("submit", function (event) {
     const nom = document.getElementById("nom").value.trim();
@@ -15,10 +15,8 @@ formulaire.addEventListener("submit", function (event) {
     const erreur = valider(nom, telephone, terrain, date, heure, duree);
 
     if (erreur !== "") {
-        event.preventDefault(); // on bloque l'envoi seulement si le formulaire est invalide
-        alert(erreur);
+        event.preventDefault(); 
     }
-    // sinon : le formulaire part normalement vers traitement.php
 });
 
 function valider(nom, telephone, terrain, date, heure, duree) {

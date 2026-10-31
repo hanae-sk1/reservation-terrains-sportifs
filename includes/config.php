@@ -1,5 +1,4 @@
 <?php
-// Configuration de la connexion MySQL (valeurs par défaut de XAMPP / WAMP)
 $host     = "localhost";
 $user     = "root";
 $password = "";

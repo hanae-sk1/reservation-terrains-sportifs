@@ -1,7 +1,6 @@
 <?php
 require __DIR__ . "/includes/config.php";
 
-// Affiche une petite page de résultat (succès ou erreurs)
 function afficherPage($titre, $classe, $messages, $lienRetour, $texteRetour)
 {
     ?>
@@ -71,14 +70,13 @@ if ($nom === "" || $telephone === "" || $terrain === "" || $date === "" || $heur
         $dateObj = null;
     }
 
-    // Validation de l'heure (format HH:MM)
+
     $heureObj = DateTime::createFromFormat("H:i", $heure);
     if ($heureObj === false || $heureObj->format("H:i") !== $heure) {
         $erreurs[] = "Heure invalide.";
         $heureObj = null;
     }
 
-    // La réservation ne doit pas être dans le passé
     if ($dateObj !== null && $heureObj !== null) {
         $debut = new DateTime($date . " " . $heure);
         if ($debut < new DateTime()) {
@@ -91,7 +89,6 @@ if (!empty($erreurs)) {
     afficherPage("Réservation refusée", "erreur", $erreurs, "reservation.html", "Retour au formulaire");
 }
 
-// Vérifier que le terrain est libre sur ce créneau (pas de chevauchement)
 $dureeInt     = (int) $duree;
 $debutSec     = ((int) $heureObj->format("H")) * 3600 + ((int) $heureObj->format("i")) * 60;
 $finSec       = $debutSec + $dureeInt * 3600;
@@ -120,7 +117,6 @@ if ($nbConflits > 0) {
     );
 }
 
-// Enregistrement
 $sql  = "INSERT INTO reservations (nom, telephone, terrain, date_res, heure_debut, duree)
          VALUES (?, ?, ?, ?, ?, ?)";
 $stmt = mysqli_prepare($conn, $sql);

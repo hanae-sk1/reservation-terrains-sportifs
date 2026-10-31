@@ -12,17 +12,10 @@ Application web simple permettant de réserver un terrain (tennis, padel, footba
 ## Fonctionnalités
 
 - Formulaire de réservation (nom, téléphone, terrain, date, heure, durée)
-- Validation côté client (JavaScript) **et** côté serveur (PHP)
+- Validation côté client (JavaScript) et côté serveur (PHP)
 - Refus des dates passées et des créneaux déjà occupés sur un même terrain
 - Liste des réservations triée par date et heure
 
-## Installation
-
-1. Installer [XAMPP](https://www.apachefriends.org/) (ou WAMP / MAMP) et démarrer Apache + MySQL.
-2. Copier le dossier du projet dans `htdocs/`.
-3. Importer `sport_db.sql` via phpMyAdmin (onglet *Importer*).
-4. Vérifier les identifiants dans `includes/config.php` (par défaut : `root` sans mot de passe).
-5. Ouvrir <http://localhost/reservation-terrains-sportifs/reservation.html>.
 
 ## Structure
 
