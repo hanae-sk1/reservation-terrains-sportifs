@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation de terrain</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Réserver un terrain</h1>
+
+    <form id="formReservation" method="post" action="traitement.php" novalidate>
+        <div>
+            <label for="nom">Nom complet :</label>
+            <input id="nom" name="nom" type="text" maxlength="100" required>
+        </div>
+
+        <div>
+            <label for="telephone">Téléphone :</label>
+            <input id="telephone" name="telephone" type="tel" inputmode="numeric"
+                   pattern="[0-9]{10}" maxlength="10" placeholder="0612345678" required>
+        </div>
+
+        <div>
+            <label for="terrain">Type de terrain :</label>
+            <select id="terrain" name="terrain" required>
+                <option value="">Choisir le type</option>
+                <option value="tennis">Tennis</option>
+                <option value="padel">Padel</option>
+                <option value="football">Football</option>
+                <option value="basketball">Basketball</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="date">Date de réservation :</label>
+            <input id="date" name="date" type="date" required>
+        </div>
+
+        <div>
+            <label for="heure">Heure de début :</label>
+            <input id="heure" name="heure" type="time" required>
+        </div>
+
+        <div>
+            <label for="duree">Durée :</label>
+            <select id="duree" name="duree" required>
+                <option value="">Choisir une durée</option>
+                <option value="1">1 heure</option>
+                <option value="2">2 heures</option>
+                <option value="3">3 heures</option>
+            </select>
+        </div>
+
+        <button type="submit" id="reserver">Réserver</button>
+        <p class="lien"><a href="liste.php">Voir les réservations</a></p>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
